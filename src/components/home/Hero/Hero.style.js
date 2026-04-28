@@ -5,7 +5,7 @@ export const HeroWrapper = styled.section`
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: #0d0d0d;
+  background: ${({ theme }) => theme.colors.background};
   overflow: hidden;
   display: flex;
   align-items: center;

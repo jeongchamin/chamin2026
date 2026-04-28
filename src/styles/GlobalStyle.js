@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-import Paper1 from '../assets/fonts/Paperlogy-1Thin.ttf';
+import Paper1 from '/fonts/Paperlogy-1Thin.ttf';
 import Paper2 from '../assets/fonts/Paperlogy-2ExtraLight.ttf';
 import Paper3 from '../assets/fonts/Paperlogy-3Light.ttf';
 import Paper4 from '../assets/fonts/Paperlogy-4Regular.ttf';
@@ -14,48 +14,57 @@ const GlobalStyle = createGlobalStyle`
 
 @font-face {
     font-family: 'Paperlogy';
-    src: url(${Paper1}) format('truetype');
+    src: url('/fonts/Paperlogy-1Thin.ttf') format('truetype');
     font-weight: 100;
+    font-style: normal;
   }
   @font-face {
     font-family: 'Paperlogy';
-    src: url(${Paper2}) format('truetype');
+    src: url('/fonts/Paperlogy-2ExtraLight') format('truetype');
     font-weight: 200;
+    font-style: normal;
   }
   @font-face {
     font-family: 'Paperlogy';
-    src: url(${Paper3}) format('truetype');
+    src: url('/fonts/Paperlogy-3Light.ttf') format('truetype');
     font-weight: 300;
+    font-style: normal;
   }
   @font-face {
     font-family: 'Paperlogy';
-    src: url(${Paper4}) format('truetype');
+    src: url('/fonts/Paperlogy-4Regular.ttf') format('truetype');
     font-weight: 400;
+    font-style: normal;
   }
   @font-face {
     font-family: 'Paperlogy';
-    src: url(${Paper5}) format('truetype');
+    src: url('/fonts/Paperlogy-5Medium.ttf') format('truetype');
     font-weight: 500;
+    font-style: normal;
   }
   @font-face {
     font-family: 'Paperlogy';
-    src: url(${Paper6}) format('truetype');
+    src: url('/fonts/Paperlogy-6SemiBold.ttf') format('truetype');
     font-weight: 600;
+    font-style: normal;
   }
   @font-face {
     font-family: 'Paperlogy';
-    src: url(${Paper7}) format('truetype');
+    src: url('/fonts/Paperlogy-7Bold.ttf') format('truetype');
     font-weight: 700;
+    font-style: normal;
   }
   @font-face {
     font-family: 'Paperlogy';
-    src: url(${Paper8}) format('truetype');
+    src: url('/fonts/Paperlogy-8ExtraBold.ttf') format('truetype');
     font-weight: 800;
+    font-style: normal;
   }
   @font-face {
     font-family: 'Paperlogy';
-    src: url(${Paper9}) format('truetype');
+    src: url('/fonts/Paperlogy-9Black.ttf') format('truetype');
     font-weight: 900;
+    font-style: normal;
   }
 
   * {
