@@ -5,7 +5,7 @@ import { Button } from '../../common/Button';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import profile from '../../../assets/images/profile.png';
+import profile from '../../../assets/images/profile.jpg';
 import kakaoQr from '../../../assets/images/img_kakao_qr.png'
 
 function UserProfile(){
