@@ -112,6 +112,13 @@ export const Overlay = styled.div`
   justify-content: space-between;
   padding: 20px;
   gap: 10px;
+
+  ${({theme}) => theme.media.mobile} {
+    align-items: baseline;
+    justify-content: flex-end;
+    padding: 16px;
+    gap: 5px;
+  }
 `
 
 export const WorkTitle = styled.span`

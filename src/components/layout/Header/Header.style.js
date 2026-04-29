@@ -27,6 +27,7 @@ export const HeaderInner = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 `;
 
 //Logo

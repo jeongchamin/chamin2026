@@ -1,11 +1,12 @@
 import * as S from './UserProfile.style';
 import useAuthStore from '../../../store/useAuthStore';
-import { LuMapPin, LuShieldAlert, LuCopy } from 'react-icons/lu';
+import { LuMapPin, LuShieldAlert, LuCopy, LuMessageCircleMore } from 'react-icons/lu';
 import { Button } from '../../common/Button';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import profile from '../../../assets/images/profile.png';
+import kakaoQr from '../../../assets/images/img_kakao_qr.png'
 
 function UserProfile(){
 
@@ -39,7 +40,7 @@ function UserProfile(){
 
         navigator.clipboard.writeText(emailValue);
         setCopied(true);
-        toast('📋 이메일이 복사되었습니다.');
+        toast('이메일이 복사되었습니다.');
         setTimeout(() => setCopied(false), 2000); // 2초 뒤에 원래대로
     };
 
@@ -64,6 +65,19 @@ function UserProfile(){
                         <LuMapPin size={16} />
                         <span>Siheung-si, Gyeonggi-do, Republic of Korea</span>
                     </S.UserPosition>
+
+                    <S.SendMsgQr>
+                        <div className='modal-qr'>
+                            <div className='qr-mark'>
+                                <img src={kakaoQr} alt="카카오톡 메시지보내기"/>
+                            </div>
+                            <span>QR코드를 스캔하여<br/>카카오톡 메시지를 남겨주세요.</span>
+                        </div>
+                        <div className='modal-toggle'>
+                            <LuMessageCircleMore/>
+                        </div>
+                    </S.SendMsgQr>
+
                 </S.ProfileHeader>
 
                 <S.ProfileContents>
@@ -86,7 +100,9 @@ function UserProfile(){
                         <ul className='info-between'>
                             <li>
                                 <span>{userInfo[2].category} :</span>
-                                <S.ContactEffect href={`tel:${userInfo[2].info}`}>{isPartner ? userInfo[2].info : `${userInfo[2].info.slice(0,9)}****`}</S.ContactEffect>
+                                <S.ContactEffect href={`tel:${userInfo[2].info}`}>
+                                    {isPartner ? userInfo[2].info : `${userInfo[2].info.slice(0,9)}****`}
+                                </S.ContactEffect>
                             </li>
                             <li>
                                 <span>{userInfo[3].category} :</span>
@@ -135,12 +151,15 @@ function UserProfile(){
 
             </S.UserProfile>
 
-                {!isPartner &&
-                    <S.PartnerGuide>
-                        <p><LuShieldAlert size={20}/><span><strong className='accent'>'파트너' 버튼</strong>을 누르시면 상세 연락처와 경력을 확인하실 수 있습니다.</span></p>
-                        <Button type='button' variants="primary" size="sm" onClick={setPartner}>Partner</Button>
-                    </S.PartnerGuide>
-                }
+            {!isPartner &&
+                <S.PartnerGuide>
+                    <p>
+                        <LuShieldAlert/>
+                        <span><strong className='accent'>'파트너' 버튼</strong>을 누르시면 상세 연락처와 경력을 확인하실 수 있습니다.</span>
+                    </p>
+                    <Button type='button' variants="primary" size="sm" onClick={setPartner}>Partner</Button>
+                </S.PartnerGuide>
+            }
 
         </S.UserProfileWrapper>
     );

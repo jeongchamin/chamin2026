@@ -6,6 +6,7 @@ export const Container = styled.div`
     width: 100%;
     box-sizing: border-box;
     transition: all 0.5s ease-in-out;
+    padding: 0 40px;
 
     /* 태블릿 1024 */
     ${({ theme }) => theme.media.tablet} {

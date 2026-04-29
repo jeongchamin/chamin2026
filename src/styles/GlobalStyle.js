@@ -1,15 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-import Paper1 from '/fonts/Paperlogy-1Thin.ttf';
-import Paper2 from '../assets/fonts/Paperlogy-2ExtraLight.ttf';
-import Paper3 from '../assets/fonts/Paperlogy-3Light.ttf';
-import Paper4 from '../assets/fonts/Paperlogy-4Regular.ttf';
-import Paper5 from '../assets/fonts/Paperlogy-5Medium.ttf';
-import Paper6 from '../assets/fonts/Paperlogy-6SemiBold.ttf';
-import Paper7 from '../assets/fonts/Paperlogy-7Bold.ttf';
-import Paper8 from '../assets/fonts/Paperlogy-8ExtraBold.ttf';
-import Paper9 from '../assets/fonts/Paperlogy-9Black.ttf';
-
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
@@ -17,54 +7,63 @@ const GlobalStyle = createGlobalStyle`
     src: url('/fonts/Paperlogy-1Thin.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Paperlogy';
     src: url('/fonts/Paperlogy-2ExtraLight') format('truetype');
     font-weight: 200;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Paperlogy';
     src: url('/fonts/Paperlogy-3Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Paperlogy';
     src: url('/fonts/Paperlogy-4Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Paperlogy';
     src: url('/fonts/Paperlogy-5Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Paperlogy';
     src: url('/fonts/Paperlogy-6SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Paperlogy';
     src: url('/fonts/Paperlogy-7Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Paperlogy';
     src: url('/fonts/Paperlogy-8ExtraBold.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Paperlogy';
     src: url('/fonts/Paperlogy-9Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
+    font-display: swap;
   }
 
   * {
@@ -76,9 +75,11 @@ const GlobalStyle = createGlobalStyle`
   
   html {
     font-size: 16px;  /* 데스크탑 기준 */
+    font-weight: 400;
 
     ${({ theme }) => theme.media.mobile} {
-      font-size: 14px; 
+      font-size: 15px; 
+      font-weight: 400;
     }
   }
 

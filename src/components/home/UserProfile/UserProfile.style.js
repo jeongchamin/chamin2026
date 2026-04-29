@@ -40,6 +40,7 @@ export const UserProfile = styled.section`
 `;
 
 export const ProfileHeader = styled.div`
+    position: relative;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -98,7 +99,92 @@ export const UserPosition = styled.p`
     ${({ theme }) => theme.media.mobile} {
         width: 100%;  
     }
+`;
 
+export const SendMsgQr = styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    .modal-qr{
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        z-index: 2;
+        background: #ffffff;
+        border: 1px solid ${({theme}) => theme.colors.primaryBorder};
+        border-radius:32px;
+        opacity: 0;
+        transition: transform 0.6s cubic-bezier(0.625, 0.05 ,0 ,1), opacity 0.18s ease 0.3s;
+        transform-origin: top right;
+        transform: scale(0);
+        padding: 80px 20px 48px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 320px;
+        box-sizing: border-box;
+        span{
+            color: #3A3838;
+            font-size: 1rem;
+        }
+        ${({theme}) => theme.media.mobile}{
+             width: calc(100vw - 86px);
+        }
+    }
+    .qr-mark{
+        width:180px;
+        height:180px;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: transform 0.6s cubic-bezier(0.625, 0.05 ,0 ,1) , opacity 0.28s ease ;
+        transition-delay: 0.6s; 
+        img{
+            width: 100%;
+            height: 100%;
+            aspect-ratio:1;
+        }
+    }
+    .modal-toggle{
+        position: absolute;
+        top: 0;
+        right: 0;
+        display:inline-flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(0em, 0em);
+        transition: transform 0.6s cubic-bezier(0.625, 0.05 ,0 ,1);
+        padding: 12px;
+        z-index: 3;
+        border-radius: 50%;
+
+        svg{
+            width: 32px;
+            height: 32px;
+            color: ${({theme}) => theme.colors.accent};
+            stroke-width: 1.5px;
+            transition: transform 0.6s cubic-bezier(0.625, 0.05 ,0 ,1);
+        }
+    }
+
+    &:hover{
+        .modal-qr{
+            opacity: 1;
+            transform: scale(1);
+        }
+        .qr-mark{
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .modal-toggle{
+            transform: translate(-0.25em, 0.25em);
+        }
+    }
 `;
 
 export const ProfileContents = styled.div`
@@ -134,7 +220,6 @@ export const ProfileCon = styled.div`
             display: grid;
             grid-template-columns: 100px 1fr;
             gap: 48px;
-            font-weight:${props => props.theme.fontWeight.regular};
             &+li{
                 margin-top: 8px;
             }
@@ -155,7 +240,6 @@ export const ProfileCon = styled.div`
     .info-list{
         position: relative;
         li{
-            font-weight:${props => props.theme.fontWeight.regular};
             &+li{
                 margin-top: 8px;
             }
@@ -169,6 +253,8 @@ export const ContactEffect = styled.a`
         color: ${props => props.theme.colors.accent};
     }
 `;
+
+
 
 export const ContactEmail = styled.div`
     display: flex;
@@ -245,19 +331,31 @@ export const PartnerGuide = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 40px;
     background-color: ${props => props.theme.colors.contentsBg};
     color: ${props => props.theme.colors.text};
     border-radius: ${props => props.theme.radius};
     font-size: 0.9375rem;
+
+    ${({ theme }) => theme.media.mobile} {
+       padding: 20px 20px;
+    }
     p{
-        display: inline-flex;
+        position: relative;
+        display: flex;
         gap: 10px;
+        padding-left: 30px;
+        word-break: keep-all;
         .accent{
             color: ${props => props.theme.colors.accent};
             font-weight: 400;
         }
         svg{
-            vertical-align: -4px;
+            width: 1.4rem;
+            height: 1.4rem;
+            position: absolute;
+            top: 0;
+            left: 0px;
             path:nth-child(1){
                 stroke: ${props => props.theme.colors.accent};
                 fill: ${props => props.theme.colors.accent};
