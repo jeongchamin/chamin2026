@@ -8,6 +8,9 @@ import { Toaster } from 'react-hot-toast'
 import useSettingsStore from './store/useSettingsStore';
 
 import Home from './pages/Home';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+
 
 function App() {
 
@@ -32,6 +35,9 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
         </Route>
+
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signUp' element={<SignUp/>}/>
         
 
       </Routes>

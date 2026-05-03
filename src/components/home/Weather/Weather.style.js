@@ -28,7 +28,7 @@ export const WeatherWrapper = styled.section`
 export const WeatherCard = styled.div`
     position: relative;
     padding: 32px 40px;
-    width: 280px;
+    width: 400px;
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px);
 
@@ -53,7 +53,6 @@ export const WeatherCard = styled.div`
         display: flex;
         align-items: center;
         gap: 6px;
-        svg{}
         span{
             font-size:0.9rem;
             font-weight:500;
@@ -76,6 +75,7 @@ export const WeatherCard = styled.div`
         justify-content: space-between;
         align-items: center;
         .detail-humidi,
+        .detail-wind,
         .detail-feels{
             flex: 1;
             display: flex;
@@ -91,6 +91,23 @@ export const WeatherCard = styled.div`
             }
         }
     }
+`;
+
+export const Skeleton = styled.div`
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 25%,   /* 회색 */
+    #f0f0f0 50%,   /* 밝아졌다가 */
+    #e0e0e0 75%    /* 다시 회색 */
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;  /* 반짝반짝 흐르는 효과 */
+  border-radius: 8px;
+
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
 `;
 
 export const ErrorCard = styled.div`

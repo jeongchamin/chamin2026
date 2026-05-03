@@ -4,7 +4,7 @@ import UserProfile from "../components/home/UserProfile/UserProfile";
 import WorksGrid from "../components/home/WorksGrid/WorksGrid";
 import {LineTitle} from "../components/common";
 import { Container } from "../components/common/Container";
-// import Weather from "../components/home/Weather/Weather";
+import Weather from "../components/home/Weather/Weather";
 
 const HomeWrapper = styled.div`
 
@@ -17,7 +17,7 @@ function Home(){
             <Hero/>
 
             <Container>
-                {/* <Weather/> */}
+                <Weather/>
 
                 <LineTitle label="About Me"/>
                 <UserProfile/>
